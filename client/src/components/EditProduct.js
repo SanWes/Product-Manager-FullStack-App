@@ -12,12 +12,6 @@ const EditProduct = () => {
 
     const history = useHistory(); //this is for redirecting when we submit the form
 
-    let [formInfo, setFormInfo] = useState({
-        title: null,
-        price: null,
-        description: null,
-    })
-
 
     useEffect( () => {
         axios.get(`http://localhost:8000/api/products/${id}/`)
@@ -26,7 +20,7 @@ const EditProduct = () => {
             setOneProduct(res.data.results)
         })
         .catch(err => console.log("ERRORRRR-->", err))
-    }, [id])
+    }, [id] )
 
 
 
@@ -34,13 +28,13 @@ const EditProduct = () => {
         console.log("Changing something");
         console.log(e.target.name, e.target.value);
         if(e.target.type === "checkbox" ) {
-            setFormInfo({
-                ...formInfo,
-                isOnSale: !formInfo.isOnSale
+            setOneProduct({
+                ...oneProduct,
+                isOnSale: !oneProduct.isOnSale
             })
         } else {
-            setFormInfo({
-                ...formInfo,
+            setOneProduct({
+                ...oneProduct,
                 [ e.target.name]: e.target.value
             })
         }
@@ -50,13 +44,13 @@ const EditProduct = () => {
     //update our product with put call
     const submitHandler = (e) => {
         e.preventDefault()
-        console.log("submitted with this info -->", formInfo);
+        console.log("submitted with this info -->", oneProduct);
 
-        axios.put(`http://localhost:8000/api/products/${id}`, formInfo)
+        axios.put(`http://localhost:8000/api/products/${id}`, oneProduct)
             .then(res=>{
                     console.log("response after successful axios post resquest-->", res);
                     
-                    history.push("/");
+                    history.push(`/products/${id}`);
             })
             .catch(err=>{
                     console.log("Error Occured -->",err);
@@ -71,15 +65,15 @@ const EditProduct = () => {
             <form onSubmit={submitHandler} action="">
                 <div className="form-group">
                     <label htmlFor="">Title:</label>
-                    <input onChange={changeHandler} type="text" name="title" id="" className="form-control" placeholder={oneProduct.title} />
+                    <input onChange={changeHandler} type="text" name="title" id="" className="form-control" value={oneProduct.title} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="">Price:</label>
-                    <input onChange={changeHandler} type="number" name="price" id="" className="form-control" placeholder={oneProduct.price} />
+                    <input onChange={changeHandler} type="number" name="price" id="" className="form-control" value={oneProduct.price} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="">Description:</label>
-                    <input onChange={changeHandler} type="text" name="description" id="" className="form-control" placeholder={oneProduct.description} />
+                    <input onChange={changeHandler} type="text" name="description" id="" className="form-control" value={oneProduct.description} />
                 </div>
               
 

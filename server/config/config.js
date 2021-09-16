@@ -7,4 +7,4 @@ mongoose.connect(`mongodb+srv://root:root@mern.6etyz.mongodb.net/${db_name}?retr
     useUnifiedTopology: true
 })
     .then(() => console.log(`Established a connection to the ${db_name} database`))
-    .catch(err => console.log('Something went wrong when connecting to the database ', err));
+    .catch(err => console.log(`Something went wrong when connecting to the database: ${db_name} `, err));
