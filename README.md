@@ -31,22 +31,28 @@ The Product Manager app is a Full Stack MERN (MongoDB, Express, React, Node) app
   
 - **Inventory Tracking**: Real-time monitoring of stock levels for efficient inventory management.
 
-## Installation
+## Installation Instructions
 
-1. Clone the repository.
-git clone <repository-url>
+To set up the project:
 
+1. Clone this repository.
 2. Navigate to the project directory.
-cd Product-Manager-App
+3. Install dependencies using `npm install`.
+4. Set up your MongoDB connection in the backend.
+5. Start the application using `npm start`.
+6. Access the application through `http://localhost:3000`.
 
-3. Install dependencies.
-npm install
+## Usage Guide
 
+The Product Manager app empowers users to:
 
-## Usage
+Manage inventory efficiently.
+Add new products with detailed information.
+Update product details seamlessly.
+Remove products when necessary.
 
-- To start the application, use:
-npm start
+Use the provided commands to navigate through the application effortlessly.
+
 
 
 ## Contributing
