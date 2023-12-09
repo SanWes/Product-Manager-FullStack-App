@@ -12,5 +12,5 @@ module.exports = app => {
     app.put("/api/products/:id", ProductController.updateExistingProduct);
     //DELETE PRODUCT
     app.delete("/api/products/delete/:id", ProductController.deleteProduct);
-   
+
 }

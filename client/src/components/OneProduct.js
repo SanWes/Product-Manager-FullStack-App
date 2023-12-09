@@ -50,6 +50,7 @@ const OneProduct = () => {
                   </h4>
                   <p className="card-text">Price: {oneProduct.price}</p>
                   <p className="card-text">Description: {oneProduct.description}</p>
+                  <p className="card-text">In Stock: {oneProduct.stock}</p>
 
                   <p> <Link className="btn btn-warning m-3" to={location => ({ ...location, pathname: `/products/${oneProduct._id}/edit` })}> Edit</Link>      </p>
 

@@ -16,6 +16,10 @@ const ProductSchema = new mongoose.Schema({
         required: [true, "Describe the item "],
         minlength: [6, "Description must be at least 6 characters long"]
     },
+    stock:{
+        type: Number,
+        required:[true, "How many?"]
+    }
     
 })
 

@@ -50,6 +50,7 @@ const AllProducts = (props) => {
                   <h4 className="card-title"> {product.title} </h4>
                   <p className="card-text">price: {product.price}</p>
                   <p className="card-text">Description: {product.description}</p>
+                  <p className="card-text">In Stock: {product.stock}</p>
 
 
                   <Link className="btn btn-info mr-3" to={location => ({ ...location, pathname: `/products/${product._id}` })}> Product Page</Link>

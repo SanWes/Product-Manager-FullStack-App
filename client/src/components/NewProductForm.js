@@ -1,13 +1,18 @@
 import axios from 'axios';
 import React, {useState} from 'react';
+import { useHistory } from "react-router-dom";
+
 
 
 const NewProductForm = (props) => {
     
+    const history = useHistory(); //this is for redirecting when we submit the form
+
     let [formInfo, setFormInfo] = useState({
         title: null,
         price: null,
         description: null,
+        stock:0
     })
     
  
@@ -50,7 +55,7 @@ const NewProductForm = (props) => {
                     } else { // form is successful NO ERRORS Redirect to home route
                         console.log("Data has been successfully sent to database");
                         props.setSubmitClicked(!props.submittedClicked)
-                        
+                        history.push("/");
                         
                     }
                     
@@ -87,6 +92,13 @@ const NewProductForm = (props) => {
                         <input onChange={changeHandler} type="text" name="description" id="" className="form-control" />
 
                         <p className="text-danger"> {validationErrors.description?.message}  </p>
+                    </div>
+                    
+                    <div className="form-group">
+                        <label htmlFor="">How Many in Stock:</label>
+                        <input onChange={changeHandler} type="text" name="stock" id="" className="form-control" />
+
+                        <p className="text-danger"> {validationErrors.stock?.message}  </p>
                     </div>
                   
 

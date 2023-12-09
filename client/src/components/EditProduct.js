@@ -75,7 +75,11 @@ const EditProduct = () => {
                     <label htmlFor="">Description:</label>
                     <input onChange={changeHandler} type="text" name="description" id="" className="form-control" value={oneProduct.description} />
                 </div>
-              
+                <div className="form-group">
+                        <label htmlFor="">How Many in Stock:</label>
+                        <input onChange={changeHandler} type="text" name="stock" id="" className="form-control" />
+
+                    </div>
 
                 <input className="btn btn-primary" type="submit" value="Update Product" />
 

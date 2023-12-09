@@ -1,1 +1,43 @@
-/node_modules
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Ignore node_modules directory
+node_modules/
+
+# dependencies
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# Ignore log files
+*.log
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore environment-specific files
+.env
+
+# Ignore package-lock.json (useful for projects using npm)
+package-lock.json
+
+# Ignore compiled files or build directories
+/build/
+/dist/
+/out/
+
+# Ignore IDE or editor-specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore sensitive or private information
+config.js
+secrets.json
+
+# Ignore OS generated files
+Thumbs.db
+ehthumbs.db
+Icon?

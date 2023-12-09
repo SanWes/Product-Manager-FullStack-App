@@ -1,17 +1,20 @@
 {
-  "name": "ProductManager",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "mongoose": "^6.0.5"
-  }
+    "name": "Product-Manager-FullStack-App",
+    "version": "1.0.0",
+    "description": "Manage inventory with this system tracker",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.17.1",
+        "mongoose": "^6.0.5",
+        "nodemon": "^3.0.1"
+    }
 }
