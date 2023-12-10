@@ -14,7 +14,7 @@ const EditProduct = () => {
 
 
     useEffect( () => {
-        axios.get(`http://localhost:8000/api/products/${id}/`)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/products/${id}/`)
         .then(res=> {
             console.log("****** res is this", res);
             setOneProduct(res.data.results)
@@ -46,7 +46,7 @@ const EditProduct = () => {
         e.preventDefault()
         console.log("submitted with this info -->", oneProduct);
 
-        axios.put(`http://localhost:8000/api/products/${id}`, oneProduct)
+        axios.put(`${process.env.REACT_APP_API_URL}/api/products/${id}`, oneProduct)
             .then(res=>{
                     console.log("response after successful axios post resquest-->", res);
                     

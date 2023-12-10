@@ -13,7 +13,7 @@ const OneProduct = () => {
 
     
     useEffect( () => {
-        axios.get(`http://localhost:8000/api/products/${id}/`)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/products/${id}/`)
         .then(res=> {
             console.log("****** res is this", res);
             setOneProduct(res.data.results)
@@ -26,7 +26,7 @@ const OneProduct = () => {
     const deleteHandler = (e) => {
         // e.preventDefault()
 
-            axios.delete(`http://localhost:8000/api/products/delete/${id}`)
+            axios.delete(`${process.env.REACT_APP_API_URL}/api/products/delete/${id}`)
             .then(res=>{
                     console.log("response after successful axios post resquest-->", res);
                     history.push("/");
@@ -43,19 +43,19 @@ const OneProduct = () => {
         <div>
             <h3>Enjoy This Product</h3>
 
-                 <div className="card">
+            <div className="card">
                 <div className="card-body">
-                  <h4 className="card-title">
-                  {oneProduct.title}
-                  </h4>
-                  <p className="card-text">Price: {oneProduct.price}</p>
-                  <p className="card-text">Description: {oneProduct.description}</p>
-                  <p className="card-text">In Stock: {oneProduct.stock}</p>
+                    <h4 className="card-title">
+                    {oneProduct.title}
+                    </h4>
+                    <p className="card-text">Price: {oneProduct.price}</p>
+                    <p className="card-text">Description: {oneProduct.description}</p>
+                    <p className="card-text">In Stock: {oneProduct.stock}</p>
 
-                  <p> <Link className="btn btn-warning m-3" to={location => ({ ...location, pathname: `/products/${oneProduct._id}/edit` })}> Edit</Link>      </p>
+                    <p> <Link className="btn btn-warning m-3" to={location => ({ ...location, pathname: `/products/${oneProduct._id}/edit` })}> Edit</Link>      </p>
 
-                  <p><button className="btn-outline-danger" onClick={deleteHandler}>Delete</button></p>
-                  
+                    <p><button className="btn-outline-danger" onClick={deleteHandler}>Delete</button></p>
+                
                 </div>
               </div>
 

@@ -41,7 +41,7 @@ const NewProductForm = (props) => {
         e.preventDefault();
         console.log("submitted with this info -->", formInfo);
 
-        axios.post("http://localhost:8000/api/products", formInfo)
+        axios.post(`${process.env.REACT_APP_API_URL}/api/products`, formInfo)
 
             .then(res=>{
                     console.log("response after successful axios post resquest-->", res);
@@ -100,7 +100,6 @@ const NewProductForm = (props) => {
 
                         <p className="text-danger"> {validationErrors.stock?.message}  </p>
                     </div>
-                  
 
                     <input className="btn btn-primary" type="submit" value="Create Product" />
 

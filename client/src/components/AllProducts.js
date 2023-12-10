@@ -12,9 +12,8 @@ const AllProducts = (props) => {
     const history = useHistory();
 
     const [deleteClicked, setDeleteClicked] = useState(false)
-
     useEffect( () => {
-        axios.get("http://localhost:8000/api/products")
+        axios.get(`${process.env.REACT_APP_API_URL}/api/products`)
         .then(res=> {
             console.log("****** res is this", res);
             setAllProducts(res.data.results)
@@ -27,7 +26,7 @@ const AllProducts = (props) => {
     const deleteHandler = (e, idOfProd) => {
         
 
-            axios.delete(`http://localhost:8000/api/products/delete/${idOfProd}`)
+            axios.delete(`${process.env.REACT_APP_API_URL}/api/products/delete/${idOfProd}`)
             .then(res=>{
                     console.log("response after successful axios DELETE resquest-->", res);
                     setDeleteClicked(!deleteClicked)
