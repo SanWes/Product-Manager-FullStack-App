@@ -21,7 +21,7 @@ function App() {
 <BrowserRouter> 
     <div className="App container">
     <nav className="navbar">
-      <h1 className="mt-2">Product Inventory</h1>
+      <h1 className="mt-2">Smart Sync Inventory</h1>
       <Link className="btn btn-info m-3" to="/" >Home</Link> <br />
       <Link className="btn btn-success m-3" to="/new" >New Product</Link> <br />
     </nav>

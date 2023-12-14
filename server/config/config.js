@@ -3,7 +3,9 @@ const mongoose = require('mongoose');
 
 mongoose.set('strictQuery', false);
 
-const { MONGODB_URI } = process.env;
+const { DB_LINK, DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME, MONGODB_URI } = process.env;
+
+const urlDB = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?${DB_LINK}`;
 
 // console.log(MONGODB_URI, " is Type of ???????????????  ");
 // console.log(typeof MONGODB_URI, "<<<<<<<<<<<===========================");  // should be string 
@@ -11,7 +13,7 @@ const { MONGODB_URI } = process.env;
 
 
 //mongoose connection/config
-mongoose.connect(MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(urlDB, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => console.log(`Established a connection to the database`))
     .catch(err => console.log(`ERROR connecting to the database: `, err.message));
 

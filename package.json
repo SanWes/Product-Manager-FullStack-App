@@ -1,20 +1,32 @@
 {
-    "name": "Product-Manager-FullStack-App",
-    "version": "1.0.0",
-    "description": "Manage inventory with this system tracker",
-    "main": "index.js",
-    "scripts": {
-        "start": "node server.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "cors": "^2.8.5",
-        "dotenv": "^16.3.1",
-        "express": "^4.17.1",
-        "mongoose": "^6.0.5",
-        "nodemon": "^3.0.1"
-    }
+"name": "Product-Manager-FullStack-App",
+"version": "1.0.0",
+"description": "Manage inventory with this system tracker",
+"main": "server.js",
+"scripts": {
+    "start": "node server.js",
+    "build": "tsc && webpack",
+    "build:prod": "tsc --project tsconfig.prod.json && webpack --config webpack.prod.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:unit": "jest",  
+    "test:e2e": "mocha",  
+    "prestart": "npm run build"
+},
+"keywords": [],
+"author": "",
+"license": "ISC",
+"dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.5",
+    "nodemon": "^3.0.2"
+},
+"devDependencies": {
+
+    "typescript": "^4.5.4",
+    "webpack": "^5.65.0",
+    "jest": "^27.4.7",
+    "mocha": "^9.1.3"
+}
 }

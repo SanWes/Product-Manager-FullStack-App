@@ -8,13 +8,15 @@ import { useHistory, Link } from "react-router-dom";
 const AllProducts = (props) => {
 
     const [allProducts, setAllProducts] = useState([])
-    const {id} = useParams()
+    const {id} = useParams();
     const history = useHistory();
 
-    const [deleteClicked, setDeleteClicked] = useState(false)
+    const [deleteClicked, setDeleteClicked] = useState(false);
+
     useEffect( () => {
-        axios.get(`${process.env.REACT_APP_API_URL}/api/products`)
+        axios.get( `http://localhost:8000/api/products` || `${process.env.REACT_APP_API_URL}/api/products`)
         .then(res=> {
+
             console.log("****** res is this", res);
             setAllProducts(res.data.results)
         })

@@ -9,6 +9,7 @@ app.use( express.urlencoded({ extended: true }) ); //tells my app that it can ga
 app.use(cors()); //tells the app that it is allowed to share resources  
 
 require("./server/config/config");
+console.log("dfgrg")
 
 //require the routes
 require("./server/routes/product.routes")(app)
