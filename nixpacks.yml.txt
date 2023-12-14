@@ -8,21 +8,21 @@ builders:
     steps:
       - name: Install backend dependencies
         command: npm install
-        path:   # Path to backend directory
+        path: ./  # Path to backend directory
 
       - name: Start backend server
         command: nodemon server.js
-        path:   # Path to backend directory
+        path: ./  # Path to backend directory
 
   frontend:
     steps:
       - name: Install frontend dependencies
-        path: /client # Path to frontend directory
         command: npm install
+        path: /client # Path to frontend directory
 
       - name: Build frontend
-        path: /client # Path to frontend directory
         command: npm run build
+        path: /client # Path to frontend directory
 
 # Define services using the builders
 services:

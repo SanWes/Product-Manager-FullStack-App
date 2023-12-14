@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router';
 import { useHistory, Link } from "react-router-dom";
+require('dotenv').config();
 
 
 

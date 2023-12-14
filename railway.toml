@@ -14,9 +14,9 @@ PORT = 8000
 
 [services.frontend]
 commands = [
-    "npx nixpacks build frontend",  # Use Nixpacks to build the frontend
-    "npx nixpacks start frontend"   # Start the frontend
+    "npx nixpacks build frontend",     
+    "npx nixpacks start frontend"   # kStart the frontend
 ]
 
 [env.frontend]
-REACT_APP_API_URL = "${process.env.REACT_APP_API_URL}"  # Replace with your backend URL
+REACT_APP_API_URL = "https://server-productmanager.up.railway.app"  # Replace with your backend URL

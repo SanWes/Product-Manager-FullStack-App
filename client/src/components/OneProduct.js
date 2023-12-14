@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router';
 import { useHistory, Link } from "react-router-dom";
+require('dotenv').config();
 
 
 const OneProduct = () => {
@@ -13,13 +14,27 @@ const OneProduct = () => {
 
     
     useEffect( () => {
-        axios.get(`${process.env.REACT_APP_API_URL}/api/products/${id}/`)
+        axios.get( `http://localhost:8000/api/products/${id}/` || `${process.env.REACT_APP_API_URL}/api/products/${id}/` )
         .then(res=> {
             console.log("****** res is this", res);
             setOneProduct(res.data.results)
         })
         .catch(err => console.log("ERRORRRR-->", err))
-    }, [id])
+    }, [id]) 
+
+    // useEffect(() => {
+    //         let apiUrl = process.env.REACT_APP_API_URL
+    //             ? `${process.env.REACT_APP_API_URL}/api/products/${id}/`
+    //             : `https://server-productmanager.up.railway.app/api/products/${id}/`;
+        
+    //         axios.get(apiUrl)
+    //         .then(res => {
+    //             console.log("****** res is this", res);
+    //             setOneProduct(res.data.results);
+    //         })
+    //         .catch(err => console.log("ERRORRRR-->", err.message));
+    //     }, [id]);
+        
 
 
     
@@ -68,3 +83,6 @@ const OneProduct = () => {
 }
 
 export default OneProduct
+
+
+
