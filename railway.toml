@@ -1,22 +1,23 @@
 [services.backend]
-commands = [
-    "npx nixpacks build backend",  # Use Nixpacks to build the backend
-    "npx nixpacks start backend"   # Start the backend
-]
+    commands = [
+        "npx nixpacks build backend",  # Use Nixpacks to build the backend
+        "npx nixpacks start backend server"   # Start the backend
+    ]
 
-[env]
-NODE_ENV = "production"
-MONGODB_URI = "${process.env.MONGODB_URI}"  # Replace with your MongoDB connection URI
-PORT = 8000
+    [env]
+    NODE_ENV = "production"
+    MONGODB_URI = "${process.env.MONGODB_URI}"  # Replace with your MongoDB connection URI
+    PORT = 8000
 
-[[ports]]
-8000 = 8000
+
+    [[ports]]
+    8000 = 8000
 
 [services.frontend]
-commands = [
-    "npx nixpacks build frontend",     
-    "npx nixpacks start frontend"   # kStart the frontend
-]
+    commands = [
+        "npx nixpacks build frontend",     
+        "npx nixpacks start frontend"   # Start the frontend
+    ]
 
-[env.frontend]
-REACT_APP_API_URL = "https://server-productmanager.up.railway.app"  # Replace with your backend URL
+    [env.frontend]
+    REACT_APP_API_URL = "https://server-productmanager.up.railway.app"  # Replace with your backend URL
